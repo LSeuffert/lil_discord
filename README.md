@@ -1,3 +1,3 @@
-# BabyBot
+# Lil Discord 
 
-Nothing special at the moment.
+A work in progress.
