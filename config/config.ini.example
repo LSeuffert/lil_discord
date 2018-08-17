@@ -1,2 +1,5 @@
+[General]
+Prefix = prefix
+
 [Credentials]
 DiscordToken = token
