@@ -1,5 +1,5 @@
 import asyncio
-from .config import Config
+from util import Config
 from discord.ext import commands
 
 class LilDiscord(commands.Bot):
