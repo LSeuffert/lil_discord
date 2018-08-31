@@ -14,9 +14,9 @@ class LilDiscord(commands.Bot):
         if message.author == self.user:
             return
 
-        if self.weeb_check(lower_message, 'weeb'):
+        if self.word_check(lower_message, 'weeb') or self.word_check(lower_message, 'anime'):
             await self.send_message(message.channel, 'weebs out :angry: :point_right: :door:')
-        
+
         await self.process_commands(message)
 
 
