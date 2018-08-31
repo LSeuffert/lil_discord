@@ -22,8 +22,9 @@ class LilDiscord(commands.Bot):
 
     def word_check(self, msg, word):
         word_index = msg.find(word)
+        word_length = len(word)
         if word_index > -1 and (word_index == 0 or msg[word_index - 1] in ' \'"*') \
-           and (word_index + 4 >= len(msg) - 1 or msg[word_index + 4] in ' s.,!?\'"*'):
+           and (word_index + word_length >= len(msg) - 1 or msg[word_index + word_length] in ' s.,!?\'"*'):
             return True
         return False
 
