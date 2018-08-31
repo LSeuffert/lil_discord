@@ -16,9 +16,9 @@ class LilDiscord(commands.Bot):
 
         if self.weeb_check(lower_message):
             await self.send_message(message.channel, 'weebs out :angry: :point_right: :door:')
-            
-        await self.process_commands(message)
         
+        await self.process_commands(message)
+
 
     def weeb_check(self, msg):
         weeb_index = msg.find('weeb')
@@ -26,9 +26,9 @@ class LilDiscord(commands.Bot):
            and (weeb_index + 4 >= len(msg) - 1 or msg[weeb_index + 4] in ' s.,!?'):
             return True
         return False
-            
 
-        
+
+
     def run(self):
         try:
             self.loop.run_until_complete(self.start(*self.config.auth))
@@ -40,4 +40,3 @@ class LilDiscord(commands.Bot):
         print(self.user.name)
         print(self.user.id)
         print('------')
- 
