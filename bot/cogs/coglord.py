@@ -20,6 +20,10 @@ class CogLord:
         print(args)
         await self.bot.say(' '.join(args))
 
+    @commands.command(pass_context=True)
+    async def lil(self, ctx):
+        await self.bot.say('lil '+ctx.message.author.name)
+
     def get_quote(self):
         quotes=['I got two questions for you.... do you like anime and do you like hentai? - Matthew',
         'test']
