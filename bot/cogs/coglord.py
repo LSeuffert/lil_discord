@@ -22,7 +22,7 @@ class CogLord:
 
     def get_quote(self):
         quotes=['I got two questions for you.... do you like anime and do you like hentai? - Matthew',
-        'test']
+        'Im in the kitchen, yams everywhere - 2chainz',]
         return random.choice(quotes)
 
 
