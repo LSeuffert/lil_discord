@@ -14,16 +14,17 @@ class LilDiscord(commands.Bot):
         if message.author == self.user:
             return
 
-        if self.weeb_check(lower_message):
+        if self.word_check(lower_message, 'weeb') or self.word_check(lower_message, 'anime'):
             await self.send_message(message.channel, 'weebs out :angry: :point_right: :door:')
-        
+
         await self.process_commands(message)
 
 
-    def weeb_check(self, msg):
-        weeb_index = msg.find('weeb')
-        if weeb_index > -1 and (weeb_index == 0 or msg[weeb_index - 1] in ' ') \
-           and (weeb_index + 4 >= len(msg) - 1 or msg[weeb_index + 4] in ' s.,!?'):
+    def word_check(self, msg, word):
+        word_index = msg.find(word)
+        word_length = len(word)
+        if word_index > -1 and (word_index == 0 or msg[word_index - 1] in ' \'"*') \
+           and (word_index + word_length >= len(msg) or msg[word_index + word_length] in ' s.,!?\'"*'):
             return True
         return False
 
