@@ -25,8 +25,9 @@ class CogLord:
         await self.bot.say('lil '+ctx.message.author.name)
 
     def get_quote(self):
-        quotes=['I got two questions for you.... do you like anime and do you like hentai? - Matthew',
-        'Im in the kitchen, yams everywhere - 2chainz',]
+        quotes=['I got two questions for you.... do you like anime and do you like ******? - Matthew',
+        'Im in the kitchen, yams everywhere - 2chainz',
+        '???',]
         return random.choice(quotes)
 
 
