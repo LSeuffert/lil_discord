@@ -1,10 +1,12 @@
 import discord
+import json, urllib.request
 from discord.ext import commands
 import random
 
 class CogLord:
     def __init__(self, bot):
         self.bot = bot
+        self.quoteurl = 'http://lil-discord.herokuapp.com/quotes'
 
     @commands.command()
     async def test(self):
@@ -25,11 +27,9 @@ class CogLord:
         await self.bot.say('lil '+ctx.message.author.name)
 
     def get_quote(self):
-        quotes=['I got two questions for you.... do you like anime and do you like ******? - Matthew',
-        'Im in the kitchen, yams everywhere - 2chainz',
-        '???',]
-        return random.choice(quotes)
-
+        with urllib.request.urlopen(self.quoteurl) as url:
+            data = json.loads(url.read().decode())
+            return data['quote']
 
 def setup(bot):
     bot.add_cog(CogLord(bot))
