@@ -17,6 +17,9 @@ class LilDiscord(commands.Bot):
         if self.word_check(lower_message, 'weeb') or self.word_check(lower_message, 'anime'):
             await self.send_message(message.channel, 'weebs out :angry: :point_right: :door:')
 
+        if self.word_check(lower_message, 'njit') or self.word_check(lower_message, 'hack'):
+            await self.send_message(message.channel, 'http://hacknjit.org/')
+
         await self.process_commands(message)
 
 
